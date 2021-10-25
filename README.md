@@ -2,19 +2,14 @@
 ### Setup
 Clone o repositório:
 ```
-git clone https://github.com/damdrade/ToDo-App.git
+git clone https://github.com/damdrade/authentication.git
 ```
 
 ### Bootstrap
-O [Bootstrap](https://getbootstrap.com/) foi utilizado para estilizar as listas, a barra de navegação e a tela de login.
+O [Bootstrap](https://getbootstrap.com/) foi utilizado para a criação de um layout estilizado e responsivo.
 
 ### Cadastro de usuários
-A função de cadastro de usuários foi implementada através da utilização da gem `Devise` proporcionando que o usuário logado tenha o direito de editar apenas seu próprio conteúdo.
+O cadastro de usuários foi implementado através da utilização da gem `Devise`. As validações de Nome, Email e Senha do usuário foram feitas em dois arquivos: `models/user.rb` e `config/initializers/devise.rb`.
 
-### Listas
-O usuário logado pode criar uma lista pública ou privada, sendo que a lista pública pode ser vista por todos os usuários desse ambiente. Uma lista pode ser marcada como **Finalizada**, indicando que suas tarefas já foram concluídas, ou como **Favorita**.
-
-Uma lista pode conter diversas tarefas e cada tarefa também podem ser marcada como **Finalizada** individualmente. Para realizar a associação das tarefas às listas foi utilizada a gem `Cocoon` que faz esta relação através de *nested attributes*.
-
-### Testes
-Os testes de desenvolvimento (TDD) foram realizados através das gems `RSpec` e `Capybara`.
+### Login
+O usuário logado tem acesso à sua página, enquanto um usuário não logado enxerga uma tela genérica de Login.

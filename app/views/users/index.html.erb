@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<% if user_signed_in? %>
+		<div class="container-fluid padding">
+			<div class="row welcome text-center">
+				<div class="col-12">
+					<h1 class="display-4">Welcome, <%= @user.name %></h1>
+				</div>
+			</div>
+			<div class="row login text-center">
+				<div class="col-12">
+					<p class="lead">This is the page I made for my job application at CoffeBean Technology. I hope you like it</p>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="container-fluid padding">
+			<div class="row built text-center">
+				<div class="col-12">
+					<h1 class="display-4">Built with</h1>
+				</div>
+			</div>
+			<br/>
+			<div class="row text-center padding">
+				<div class="col-xs-12 col-sm-6 col-md-3">
+					<i class="fas fa-gem"></i>
+					<h3>Ruby on Rails</h3>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-3">
+					<i class="fas fa-code"></i>
+					<h3>HTML</h3>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-3">
+					<i class="fab fa-css3"></i>
+					<h3>CSS</h3>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-3">
+					<i class="fas fa-bold"></i>
+					<h3>Bootstrap</h3>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<figure>
+			<div class="fixed-wrap">
+				<div class="fixed">
+					<h1 class="fixed-text">Awesome background</h1>
+				</div>
+			</div>
+		</figure>
+		<br>
+		<div class="container-fluid padding">
+			<div class="row padding">
+				<div class="col-lg-10 col-md-8 col-sm-6 col-xs-12">
+					<h2 class="padding">Responsive...</h2>
+					<p>
+						Thanks to Bootstrap we can display the web page differently depending on the screen size or viewing device.
+					</p>
+					<p>
+						The columns will automatically stack on top of each other when you reduce the screen size. Resize the browser window to see the effect.
+					</p>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+					<%= image_tag("bootstrap.png") %>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid padding">
+			<div class="row text-center padding">
+				<div class="col-12">
+					<h2>Connect</h2>
+				</div>
+				<div class="col-12 social padding">
+					<a href="https://www.linkedin.com/in/damdrade"><i class="fab fa-linkedin"></i></a>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="container-fluid padding">
+				<div class="row text-center">
+					<hr class="light">
+					<div class="col-md-4">
+						<p>damdrade.morais@gmail.com</p>
+					</div>
+					<div class="col-md-4">
+						<p>(11)95454-8835</p>
+					</div>
+					<div class="col-md-4">
+						<p>São Paulo, SP</p>
+					</div>
+					<hr class="light">
+				</div>
+			</div>
+		</footer>
+	<% else %>
+		<div class="container-fluid padding">
+			<div class="row welcome text-center">
+				<div class="col-12">
+					<h1 class="display-4">Welcome</h1>
+				</div>
+			</div>
+			<hr>
+			<div class="row login text-center">
+				<div class="col-12">
+					<p class="lead">Please <%= link_to 'Sign in', new_user_session_path%> or <%= link_to 'Register', new_user_registration_path%> to continue</p>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</body>
+</html>
